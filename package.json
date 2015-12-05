@@ -1,0 +1,38 @@
+{
+  "name": "utility-opentype",
+  "version": "v0.1.0-beta.3",
+  "description": "Advanced typographic feature utilities.",
+  "author": "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
+  "repository": "kennethormandy/utility-opentype",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "oocss",
+    "basscss",
+    "typography",
+    "opentype",
+    "font-feature-settings"
+  ],
+  "ignore": [
+    "test"
+  ],
+  "devDependencies": {
+    "assert": "1.3.0",
+    "autoprefixer": "6.1.1",
+    "clean-css": "3.4.8",
+    "css-mixed-properties": "1.1.0",
+    "cssnext": "1.8.4",
+    "cssstats": "2.1.2",
+    "mocha": "2.3.4",
+    "postcss": "5.0.12",
+    "postcss-font-variant": "2.0.0",
+    "postcss-scss": "0.1.3",
+    "watch": "0.16.0"
+  },
+  "scripts": {
+    "test": "mocha test",
+    "css": "echo \"Need to get PostCSS script here (borrow from Basscss if necessary, or just keep it as CSS and don’t use any PostCSS features)\"",
+    "start": "npm run css",
+    "watch:css": "watch 'npm run css' index.css"
+  }
+}

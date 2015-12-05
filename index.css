@@ -1,0 +1,257 @@
+/* Utility OpenType v0.1.0-beta.3
+ *
+ * Immutable advanced typographic feature utilities that
+ * degrade gracefully with CSS alone. Works great with
+ * Basscss or on its own.
+ *
+ * Copyright © 2015 [Kenneth Ormandy](http://kennethormandy.com)
+ */
+
+/* Ligatures */
+
+.liga {
+  @supports not (font-variant-ligatures: common-ligatures) {
+    font-feature-settings: "liga";
+  }
+  -ms-font-feature-settings: "liga"; /* IE doesn’t support @supports, but `font-feature-settings` isn’t unprefixed, so we’re cool. */
+  font-variant-ligatures: common-ligatures;
+}
+
+.dlig {
+  @supports not (font-variant-ligatures: discretionary-ligatures) {
+    font-feature-settings: "dlig";
+  }
+  -ms-font-feature-settings: "dlig";
+  font-variant-ligatures: discretionary-ligatures;
+}
+
+/* Caps */
+
+.smcp {
+  @supports not (font-variant-caps: small-caps) {
+    text-transform: inherit;
+    font-feature-settings: "lnum", "smcp", "c2sc" 0;
+  }
+  @supports (font-variant-caps: small-caps) {
+    text-transform: inherit;
+    font-variant-caps: small-caps;
+  }
+  text-transform: uppercase;
+  /* TODO need an MS only media query for this. */
+  /* text-transform: lowercase */
+  -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
+}
+
+.c2sc {
+  @supports (font-variant-caps: all-small-caps) or (font-feature-settings: "c2sc") {
+    text-transform: lowercase;
+  }
+  @supports not (font-variant-caps: all-small-caps) {
+    font-feature-settings: "smcp" 0, "c2sc";
+  }
+  text-transform: uppercase;
+  /* TODO need an MS only media query for this. */
+  /* text-transform: lowercase */
+  -ms-font-feature-settings: "smcp" 0, "c2sc";
+}
+
+.caps { /* This is a Basscss override, not a feature */
+  letter-spacing: 0;
+}
+
+.c2sc.smcp,
+.caps {
+  text-transform: uppercase;
+  @supports (font-feature-settings: "smcp", "c2sc") {
+    text-transform: lowercase;
+  }
+  @supports not (font-variant-caps: all-small-caps) {
+    font-feature-settings: "smcp", "c2sc";
+  }
+  font-variant-caps: caps-to-small-caps;
+}
+
+.case {
+  font-feature-settings: "case";
+}
+
+/* Alternates */
+
+.calt {
+  @supports not (font-variant-ligatures: contextual) {
+    font-feature-settings: "calt";
+  }
+  -ms-font-feature-settings: "calt";
+  font-variant-ligatures: contextual;
+}
+
+.hist {
+  @supports not (font-variant-alternates: historical-forms) {
+    font-feature-settings: "hist";
+  }
+  -ms-font-feature-settings: "hist";
+  font-variant-alternates: historical-forms;
+}
+
+.swsh,
+.swsh-1 { font-feature-settings: "swsh" 1 }
+.swsh-2 { font-feature-settings: "swsh" 2 }
+.swsh-2 { font-feature-settings: "swsh" 3 }
+
+.salt,
+.salt-1 { font-feature-settings: "salt" 1 }
+.salt-2 { font-feature-settings: "salt" 2 }
+.salt-2 { font-feature-settings: "salt" 3 }
+
+.ss01 { font-feature-settings: "ss01" }
+.ss02 { font-feature-settings: "ss02" }
+.ss03 { font-feature-settings: "ss03" }
+.ss04 { font-feature-settings: "ss04" }
+.ss05 { font-feature-settings: "ss05" }
+.ss06 { font-feature-settings: "ss06" }
+.ss07 { font-feature-settings: "ss07" }
+.ss08 { font-feature-settings: "ss08" }
+.ss09 { font-feature-settings: "ss09" }
+.ss10 { font-feature-settings: "ss10" }
+.ss11 { font-feature-settings: "ss11" }
+.ss12 { font-feature-settings: "ss12" }
+.ss13 { font-feature-settings: "ss13" }
+.ss14 { font-feature-settings: "ss14" }
+.ss15 { font-feature-settings: "ss15" }
+.ss16 { font-feature-settings: "ss16" }
+.ss17 { font-feature-settings: "ss17" }
+.ss18 { font-feature-settings: "ss18" }
+.ss19 { font-feature-settings: "ss19" }
+.ss20 { font-feature-settings: "ss20" }
+
+/* Numeric */
+
+.frac {
+  @supports not (font-variant-numeric: diagonal-fractions) {
+    font-feature-settings: "frac", "afrc" 0;
+  }
+  -ms-font-feature-settings: "frac", "afrac" 0;
+  font-variant-numeric: diagonal-fractions;
+}
+
+.afrc {
+  @supports not (font-variant-numeric: stacked-fractions) {
+    font-feature-settings: "frac", "afrc";
+  }
+  -ms-font-feature-settings: "frac", "afrac";
+  font-variant-numeric: stacked-fractions;
+}
+
+.ordn {
+  @supports not (font-variant-numeric: ordinal) {
+    font-feature-settings: "ordn";
+  }
+  font-variant-numeric: ordinal;
+}
+
+.sups {
+  text-transform: lowercase; /* Double-check whether fonts need this */
+  @supports not (font-variant-position: sup) { /* Double check whether this is `sup` or `super` */
+    font-feature-settings: "sups";
+    @supports (font-feature-settings: "sups") {
+      font-size: 1em;
+      vertical-align: baseline;
+    }
+    /* Since Safari lies and says it supports `font-feature-settings`, fix fallback subscript */
+    @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+      vertical-align: super;
+    }
+  }
+  font-variant-position: super;
+}
+
+.subs,
+.sinf {
+  text-transform: lowercase; /* Double-check whether fonts need this */
+  @supports not (font-variant-position: sub) {
+    font-feature-settings: "subs";
+    @supports (font-feature-settings: "subs") {
+      font-size: 1em;
+      vertical-align: baseline;
+    }
+    /* Since Safari lies and says it supports `font-feature-settings`, fix fallback subscript */
+    @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+      vertical-align: sub;
+      font-size: smaller;
+    }
+  }
+  font-size: inherit;
+  font-variant-position: sub;
+}
+
+.sinf {
+  @supports (font-feature-settings: "sinf") {
+    font-variant-position: normal;
+    font-feature-settings: "sinf";
+    vertical-align: baseline;
+  }
+  /* Since Safari lies and says it supports `font-feature-settings`, fix fallback subscript */
+  @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+    vertical-align: sub;
+    font-size: smaller;
+  }
+}
+
+.lnum {
+  @supports not (font-variant-numeric: lining-nums) {
+    font-feature-settings: "lnum", "onum" 0;
+   }
+  font-variant-numeric: lining-nums;
+}
+
+.onum {
+  @supports not (font-variant-numeric: oldstyle-nums) {
+    font-feature-settings: "lnum" 0, "onum";
+  }
+  font-variant-numeric: oldstyle-nums;
+}
+
+.pnum {
+  @supports not (font-variant-numeric: proportional-nums) {
+    font-feature-settings: "pnum", "tnum" 0;
+  }
+  font-variant-numeric: proportional-nums;
+}
+
+.tnum {
+  @supports not (font-variant-numeric: tabular-nums) {
+    font-feature-settings: "pnum" 0, "tnum";
+  }
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* High-level property cascade fallback, inherit doesn’t work */
+@supports not (font-feature-settings: "lnum" inherit, "onum" inherit, "pnum" inherit, "tnum" inherit) {
+  .lnum.pnum {
+    font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
+  }
+
+  .lnum.tnum {
+    font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
+  }
+
+  .onum.pnum {
+    font-feature-settings: "lnum" 0, "onum", "pnum", "tnum" 0;
+  }
+
+  .onum.tnum {
+    font-feature-settings: "lnum" 0, "onum", "pnum" 0, "tnum";
+  }
+
+  .onum.zero {
+    font-feature-settings: "onum", "zero";
+  }
+}
+
+.zero {
+  @supports not (font-variant-numeric: slashed-zero) {
+    font-feature-settings: "zero";
+  }
+  font-variant-numeric: slashed-zero;
+}
