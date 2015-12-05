@@ -1,8 +1,8 @@
 /* Utility OpenType v0.1.0-beta.3
  *
  * Immutable advanced typographic feature utilities that
- * degrade gracefully with CSS alone. Works great with
- * Basscss or on its own.
+ * fallback gracefully with CSS alone. Works great on its
+ * own or alongside Basscss.
  *
  * Copyright © 2015 [Kenneth Ormandy](http://kennethormandy.com)
  */
