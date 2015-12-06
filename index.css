@@ -75,6 +75,14 @@
   font-feature-settings: "case";
 }
 
+.titl {
+  @supports not (font-variant-caps: titling-caps) {
+    font-feature-settings: "titl";
+  }
+  -ms-font-feature-settings: "titl";
+  font-variant-caps: titling-caps;
+}
+
 /* Alternates */
 
 .calt {
