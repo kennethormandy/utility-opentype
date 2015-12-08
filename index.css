@@ -62,13 +62,13 @@
 .c2sc.smcp,
 .caps {
   text-transform: uppercase;
-  @supports (font-feature-settings: "smcp", "c2sc") {
-    text-transform: lowercase;
+  @supports (font-feature-settings: "smcp", "c2sc") { /* This is not valid CSS, but also doesn’t work in Sass when changed. */
+    @supports not (font-variant-caps: all-small-caps) {
+      text-transform: lowercase;
+      font-feature-settings: "smcp", "c2sc";
+    }
   }
-  @supports not (font-variant-caps: all-small-caps) {
-    font-feature-settings: "smcp", "c2sc";
-  }
-  font-variant-caps: caps-to-small-caps;
+  font-variant-caps: all-small-caps;
 }
 
 .case {
