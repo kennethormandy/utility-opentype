@@ -1,6 +1,6 @@
 /*
 
-    Utility OpenType v0.1.0
+    Utility OpenType v0.1.1
     Simple, CSS utility classes for advanced typographic features.
     http://utility-opentype.kennethormandy.com
 
@@ -179,7 +179,7 @@
 .ss20 { -webkit-font-feature-settings: "ss20"; font-feature-settings: "ss20" }
 
 .frac {
-  -ms-font-feature-settings: "frac", "afrac" 0;
+  -ms-font-feature-settings: "frac", "afrc" 0;
   font-variant-numeric: diagonal-fractions;
 }
 
@@ -192,7 +192,7 @@
 }
 
 .afrc {
-  -ms-font-feature-settings: "frac", "afrac";
+  -ms-font-feature-settings: "frac", "afrc";
   font-variant-numeric: stacked-fractions;
 }
 
@@ -205,6 +205,7 @@
 }
 
 .ordn {
+  -ms-font-feature-settings: "ordn";
   font-variant-numeric: ordinal;
 }
 
@@ -343,31 +344,58 @@
     font-feature-settings: "pnum" 0, "tnum", "tnum";
   }
 }
-@supports not ((-webkit-font-feature-settings: "lnum" inherit, "onum" inherit, "pnum" inherit, "tnum" inherit) or (font-feature-settings: "lnum" inherit, "onum" inherit, "pnum" inherit, "tnum" inherit)) {
+
+.lnum.pnum {
+  -ms-font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
+}
+
+@supports not ((-webkit-font-feature-settings: "lnum" inherit) or (font-feature-settings: "lnum" inherit)) {
+
   .lnum.pnum {
     -webkit-font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
-            font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
+    font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
   }
+}
+
+.lnum.tnum {
+  -ms-font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
+}
+
+@supports not ((-webkit-font-feature-settings: "lnum" inherit) or (font-feature-settings: "lnum" inherit)) {
 
   .lnum.tnum {
     -webkit-font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
-            font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
+    font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
   }
+}
+
+.onum.pnum {
+  -ms-font-feature-settings: "lnum" 0, "onum", "pnum", "tnum" 0;
+}
+
+@supports not ((-webkit-font-feature-settings: "onum" inherit) or (font-feature-settings: "onum" inherit)) {
 
   .onum.pnum {
     -webkit-font-feature-settings: "lnum" 0, "onum", "pnum", "tnum" 0;
-            font-feature-settings: "lnum" 0, "onum", "pnum", "tnum" 0;
+    font-feature-settings: "lnum" 0, "onum", "pnum", "tnum" 0;
   }
+}
+
+.onum.tnum {
+  -ms-font-feature-settings: "lnum" 0, "onum", "pnum" 0, "tnum";
+}
+
+@supports not ((-webkit-font-feature-settings: "onum" inherit) or (font-feature-settings: "onum" inherit)) {
 
   .onum.tnum {
     -webkit-font-feature-settings: "lnum" 0, "onum", "pnum" 0, "tnum";
-            font-feature-settings: "lnum" 0, "onum", "pnum" 0, "tnum";
+    font-feature-settings: "lnum" 0, "onum", "pnum" 0, "tnum";
   }
+}
 
-  .onum.zero {
-    -webkit-font-feature-settings: "onum", "zero";
-            font-feature-settings: "onum", "zero";
-  }
+.onum.zero {
+  -webkit-font-feature-settings: "onum", "zero";
+          font-feature-settings: "onum", "zero";
 }
 
 .zero {
