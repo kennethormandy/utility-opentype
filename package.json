@@ -1,7 +1,7 @@
 {
   "name": "utility-opentype",
-  "version": "v0.1.0-beta.3",
-  "description": "Immutable, advanced typographic feature utilities that fallback gracefully with CSS alone. Works great on its own, or alongside Basscss.",
+  "version": "v0.1.0-beta.4",
+  "description": "Simple, CSS utility classes for advanced typographic features.",
   "author": "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
   "repository": "kennethormandy/utility-opentype",
   "license": "MIT",
