@@ -4,7 +4,7 @@
 
 # Utility OpenType
 
-Simple, CSS utility classes for advanced typographic features. Falls back gracefully through feature queries. Less than 1.5kB gzipped. [—@kennethormandy](https://twitter.com/kennethormandy)
+Simple, CSS utility classes for advanced typographic features. Falls back gracefully through feature queries. Less than 1.75kB gzipped. [—@kennethormandy](https://twitter.com/kennethormandy)
 
 [Utility OpenType](http://utility-opentype.kennethormandy.com) helps you make the most of the font that you are loading in, reducing convoluted <abbr class="caps"><span class="caps">CSS</span></abbr> into four-letter, typographic utility classes, because:
 

@@ -1,7 +1,8 @@
 {
   "name": "utility-opentype",
-  "version": "v0.1.0-beta.4",
+  "version": "0.1.0-beta.5",
   "description": "Simple, CSS utility classes for advanced typographic features.",
+  "homepage": "http://utility-opentype.kennethormandy.com",
   "author": "Kenneth Ormandy <hello@kennethormandy.com> (http://kennethormandy.com)",
   "repository": "kennethormandy/utility-opentype",
   "license": "MIT",
