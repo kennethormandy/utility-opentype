@@ -67,6 +67,8 @@
       font-feature-settings: "smcp", "c2sc";
     }
   }
+  /* TODO Caps fallback for IE */
+  /* -moz-font-feature-settings: "smcp", "c2sc"; */
   font-variant-caps: all-small-caps;
 }
 
@@ -159,7 +161,7 @@
 
 .sups {
   text-transform: lowercase; /* Double-check whether fonts need this */
-  @supports not (font-variant-position: sup) { /* Double check whether this is `sup` or `super` */
+  @supports not (font-variant-position: sup) {
     font-feature-settings: "sups";
     @supports (font-feature-settings: "sups") {
       font-size: 1em;
