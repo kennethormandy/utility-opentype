@@ -19,7 +19,7 @@
     "test"
   ],
   "eyeglass": {
-    "sassDir": "./",
+    "sassDir": "./css/utility-opentype.css",
     "name": "utility-opentype",
     "needs": "^0.7.x"
   },
