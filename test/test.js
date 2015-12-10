@@ -12,7 +12,7 @@ var src = fs.readFileSync(path.join(__dirname, '../index.css'), 'utf8')
 var css
 var stats
 
-describe('utility-opentype', function () {
+describe('basic', function () {
 
   it('should compile', function () {
     assert.doesNotThrow(function () {

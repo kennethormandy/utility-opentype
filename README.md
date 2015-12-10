@@ -28,7 +28,7 @@ Then, include it within your source files:
 @import "utility-opentype";
 ```
 
-If you’re using Sass without Eyeglass modules, you will need to include the actual path to the file in the `node_modules` directory, for example:
+If you’re using Sass without [Eyeglass](https://github.com/sass-eyeglass/eyeglass) modules, you will need to include the actual path to the file in the `node_modules` directory, for example:
 
 ```scss
 @import "../node_modules/utility-opentype/index";
