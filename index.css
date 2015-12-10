@@ -137,7 +137,7 @@
   @supports not (font-variant-numeric: diagonal-fractions) {
     font-feature-settings: "frac", "afrc" 0;
   }
-  -ms-font-feature-settings: "frac", "afrac" 0;
+  -ms-font-feature-settings: "frac", "afrc" 0;
   font-variant-numeric: diagonal-fractions;
 }
 
@@ -145,7 +145,7 @@
   @supports not (font-variant-numeric: stacked-fractions) {
     font-feature-settings: "frac", "afrc";
   }
-  -ms-font-feature-settings: "frac", "afrac";
+  -ms-font-feature-settings: "frac", "afrc";
   font-variant-numeric: stacked-fractions;
 }
 
@@ -153,6 +153,7 @@
   @supports not (font-variant-numeric: ordinal) {
     font-feature-settings: "ordn";
   }
+  -ms-font-feature-settings: "ordn";
   font-variant-numeric: ordinal;
 }
 
@@ -234,26 +235,37 @@
 
 
 /* High-level property cascade fallback, inherit doesn’t work */
-@supports not (font-feature-settings: "lnum" inherit, "onum" inherit, "pnum" inherit, "tnum" inherit) {
-  .lnum.pnum {
+
+.lnum.pnum {
+  @supports not (font-feature-settings: "lnum" inherit) {
     font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
   }
+  -ms-font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
+}
 
-  .lnum.tnum {
+.lnum.tnum {
+  @supports not (font-feature-settings: "lnum" inherit) {
     font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
   }
+  -ms-font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
+}
 
-  .onum.pnum {
+.onum.pnum {
+  @supports not (font-feature-settings: "onum" inherit) {
     font-feature-settings: "lnum" 0, "onum", "pnum", "tnum" 0;
   }
+  -ms-font-feature-settings: "lnum" 0, "onum", "pnum", "tnum" 0;
+}
 
-  .onum.tnum {
+.onum.tnum {
+  @supports not (font-feature-settings: "onum" inherit) {
     font-feature-settings: "lnum" 0, "onum", "pnum" 0, "tnum";
   }
+  -ms-font-feature-settings: "lnum" 0, "onum", "pnum" 0, "tnum";
+}
 
-  .onum.zero {
-    font-feature-settings: "onum", "zero";
-  }
+.onum.zero {
+  font-feature-settings: "onum", "zero";
 }
 
 .zero {
