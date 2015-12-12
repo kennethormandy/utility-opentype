@@ -267,7 +267,45 @@
 }
 
 .onum.zero {
-  font-feature-settings: "onum", "zero";
+  @supports not (font-feature-settings: "onum" inherit) {
+    font-feature-settings: "onum", "zero";
+  }
+  -ms-font-feature-settings: "onum", "zero";
+}
+
+.onum.tnum.zero {
+  @supports not (font-feature-settings: "onum" inherit) {
+    font-feature-settings: "onum", "zero", "tnum";
+  }
+  -ms-font-feature-settings: "onum", "zero", "tnum";
+}
+
+.onum.pnum.zero {
+  @supports not (font-feature-settings: "onum" inherit) {
+    font-feature-settings: "onum", "zero", "pnum";
+  }
+  -ms-font-feature-settings: "onum", "zero", "pnum";
+}
+
+.lnum.zero {
+  @supports not (font-feature-settings: "onum" inherit) {
+    font-feature-settings: "lnum", "zero";
+  }
+  -ms-font-feature-settings: "lnum", "zero";
+}
+
+.lnum.tnum.zero {
+  @supports not (font-feature-settings: "onum" inherit) {
+  font-feature-settings: "lnum", "zero", "tnum";
+  }
+  -ms-font-feature-settings: "lnum", "zero", "tnum";
+}
+
+.lnum.pnum.zero {
+  @supports not (font-feature-settings: "onum" inherit) {
+  font-feature-settings: "lnum", "zero", "pnum";
+  }
+  -ms-font-feature-settings: "lnum", "zero", "pnum";
 }
 
 .zero {
