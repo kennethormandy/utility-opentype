@@ -29,7 +29,7 @@
 .smcp {
   @supports not (font-variant-caps: small-caps) {
     text-transform: inherit;
-    font-feature-settings: "lnum", "smcp", "c2sc" 0;
+    font-feature-settings: "onum", "smcp", "c2sc" 0;
   }
   @supports (font-variant-caps: small-caps) {
     text-transform: inherit;
@@ -45,7 +45,7 @@
     text-transform: lowercase;
   }
   @supports not (font-variant-caps: all-small-caps) {
-    font-feature-settings: "smcp" 0, "c2sc";
+    font-feature-settings: "onum", "smcp" 0, "c2sc";
   }
   text-transform: uppercase;
   font-variant-caps: all-small-caps;
@@ -70,6 +70,24 @@
   /* TODO Caps fallback for IE */
   /* -moz-font-feature-settings: "smcp", "c2sc"; */
   font-variant-caps: all-small-caps;
+}
+
+.smcp.onum {
+  @supports not (font-variant-caps: small-caps) {
+    @supports not (font-variant-numeric: oldstyle-nums) {
+      font-feature-settings: "onum", "smcp" 1;
+    }
+  }
+}
+
+.c2sc.onum,
+.caps.onum {
+  @supports not (font-variant-caps: all-small-caps) {
+    @supports not (font-variant-numeric: oldstyle-nums) {
+      text-transform: lowercase;
+      font-feature-settings: "onum", "smcp" 1;
+    }
+  }
 }
 
 .case {
