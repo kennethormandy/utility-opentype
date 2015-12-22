@@ -168,7 +168,7 @@
       vertical-align: baseline;
     }
     /* Since Safari lies and says it supports `font-feature-settings`, fix fallback subscript */
-    @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+    @supports (overflow: -webkit-marquee) and (justify-content: inherit) {
       vertical-align: super;
     }
   }
@@ -185,7 +185,7 @@
       vertical-align: baseline;
     }
     /* Since Safari lies and says it supports `font-feature-settings`, fix fallback subscript */
-    @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+    @supports (overflow: -webkit-marquee) and (justify-content: inherit) {
       vertical-align: sub;
       font-size: smaller;
     }
@@ -201,7 +201,7 @@
     vertical-align: baseline;
   }
   /* Since Safari lies and says it supports `font-feature-settings`, fix fallback subscript */
-  @supports (overflow:-webkit-marquee) and (justify-content:inherit) {
+  @supports (overflow: -webkit-marquee) and (justify-content: inherit) {
     vertical-align: sub;
     font-size: smaller;
   }
