@@ -35,6 +35,7 @@
     text-transform: inherit;
     font-variant-caps: small-caps;
   }
+  text-transform: uppercase;
   /* TODO need an MS only media query for this. */
   /* text-transform: lowercase */
   -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
