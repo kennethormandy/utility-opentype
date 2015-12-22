@@ -36,8 +36,9 @@
     font-variant-caps: small-caps;
   }
   text-transform: uppercase;
-  /* TODO need an MS only media query for this. */
-  /* text-transform: lowercase */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    text-transform: lowercase
+  }
   -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
 }
 
@@ -50,8 +51,9 @@
   }
   text-transform: uppercase;
   font-variant-caps: all-small-caps;
-  /* TODO need an MS only media query for this. */
-  /* text-transform: lowercase */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    text-transform: lowercase
+  }
   -ms-font-feature-settings: "smcp" 0, "c2sc";
 }
 
@@ -68,8 +70,10 @@
       font-feature-settings: "smcp", "c2sc";
     }
   }
-  /* TODO Caps fallback for IE */
-  /* -moz-font-feature-settings: "smcp", "c2sc"; */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    text-transform: lowercase;
+  }
+  -ms-font-feature-settings: "smcp", "c2sc";
   font-variant-caps: all-small-caps;
 }
 
