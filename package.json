@@ -42,7 +42,7 @@
     "watch": "0.16.0"
   },
   "scripts": {
-    "precss": "npm test",
+    "pretest": "npm run css",
     "test": "mocha test",
     "css": "node scripts/css",
     "start": "npm run css",

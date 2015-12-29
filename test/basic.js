@@ -58,7 +58,9 @@ describe('basic', function () {
     var minified = new Cleancss({ advanced: false, }).minify(css).styles
     var minifiedStats = cssstats(minified, { safe: false })
 
+    console.log(minifiedStats.gzipSize)
     assert(minifiedStats.gzipSize <= max)
+
   })
 
 })

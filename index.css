@@ -256,14 +256,14 @@
 /* High-level property cascade fallback, inherit doesn’t work */
 
 .lnum.pnum {
-  @supports not (font-feature-settings: "lnum" inherit) {
+  @supports not (font-feature-settings: "onum" inherit) {
     font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
   }
   -ms-font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
 }
 
 .lnum.tnum {
-  @supports not (font-feature-settings: "lnum" inherit) {
+  @supports not (font-feature-settings: "onum" inherit) {
     font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
   }
   -ms-font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
