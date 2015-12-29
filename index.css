@@ -37,7 +37,7 @@
   }
   text-transform: uppercase;
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-    text-transform: lowercase
+    text-transform: lowercase;
   }
   -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
 }
