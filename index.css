@@ -27,6 +27,7 @@
 /* Caps */
 
 .smcp {
+  text-transform: uppercase;
   @supports not (font-variant-caps: small-caps) {
     text-transform: inherit;
     font-feature-settings: "onum", "smcp", "c2sc" 0;
@@ -35,7 +36,6 @@
     text-transform: inherit;
     font-variant-caps: small-caps;
   }
-  text-transform: uppercase;
   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     text-transform: lowercase;
   }
