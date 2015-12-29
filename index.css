@@ -179,7 +179,6 @@
 }
 
 .sups {
-  text-transform: lowercase; /* Double-check whether fonts need this */
   @supports not (font-variant-position: sup) {
     font-feature-settings: "sups";
     @supports (font-feature-settings: "sups") {
@@ -196,7 +195,6 @@
 
 .subs,
 .sinf {
-  text-transform: lowercase; /* Double-check whether fonts need this */
   @supports not (font-variant-position: sub) {
     font-feature-settings: "subs";
     @supports (font-feature-settings: "subs") {
