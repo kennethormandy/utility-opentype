@@ -57,7 +57,9 @@
   -ms-font-feature-settings: "smcp" 0, "c2sc";
 }
 
-.caps { /* This is a Basscss override, not a feature */
+/* TODO This is a Basscss override, but has since been assigned
+   to a variable. Set the variable to `0` or drop entirely. */
+.caps {
   letter-spacing: 0;
 }
 
