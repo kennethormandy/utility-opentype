@@ -29,14 +29,16 @@
 .smcp {
   @supports not (font-variant-caps: small-caps) {
     text-transform: inherit;
-    font-feature-settings: "lnum", "smcp", "c2sc" 0;
+    font-feature-settings: "onum", "smcp", "c2sc" 0;
   }
   @supports (font-variant-caps: small-caps) {
     text-transform: inherit;
     font-variant-caps: small-caps;
   }
-  /* TODO need an MS only media query for this. */
-  /* text-transform: lowercase */
+  text-transform: uppercase;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    text-transform: lowercase;
+  }
   -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
 }
 
@@ -45,16 +47,19 @@
     text-transform: lowercase;
   }
   @supports not (font-variant-caps: all-small-caps) {
-    font-feature-settings: "smcp" 0, "c2sc";
+    font-feature-settings: "onum", "smcp" 0, "c2sc";
   }
   text-transform: uppercase;
   font-variant-caps: all-small-caps;
-  /* TODO need an MS only media query for this. */
-  /* text-transform: lowercase */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    text-transform: lowercase
+  }
   -ms-font-feature-settings: "smcp" 0, "c2sc";
 }
 
-.caps { /* This is a Basscss override, not a feature */
+/* TODO This is a Basscss override, but has since been assigned
+   to a variable. Set the variable to `0` or drop entirely. */
+.caps {
   letter-spacing: 0;
 }
 
@@ -63,13 +68,33 @@
   text-transform: uppercase;
   @supports (font-feature-settings: "smcp", "c2sc") { /* This is not valid CSS, but also doesn’t work in Sass when changed. */
     @supports not (font-variant-caps: all-small-caps) {
-      text-transform: lowercase;
+      text-transform: inherit;
       font-feature-settings: "smcp", "c2sc";
     }
   }
-  /* TODO Caps fallback for IE */
-  /* -moz-font-feature-settings: "smcp", "c2sc"; */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    text-transform: lowercase;
+  }
+  -ms-font-feature-settings: "smcp", "c2sc";
   font-variant-caps: all-small-caps;
+}
+
+.smcp.onum {
+  @supports not (font-variant-caps: small-caps) {
+    @supports not (font-variant-numeric: oldstyle-nums) {
+      font-feature-settings: "onum", "smcp" 1;
+    }
+  }
+}
+
+.c2sc.onum,
+.caps.onum {
+  @supports not (font-variant-caps: all-small-caps) {
+    @supports not (font-variant-numeric: oldstyle-nums) {
+      text-transform: lowercase;
+      font-feature-settings: "onum", "smcp" 1;
+    }
+  }
 }
 
 .case {
