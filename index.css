@@ -57,12 +57,6 @@
   -ms-font-feature-settings: "smcp" 0, "c2sc";
 }
 
-/* TODO This is a Basscss override, but has since been assigned
-   to a variable. Set the variable to `0` or drop entirely. */
-.caps {
-  letter-spacing: 0;
-}
-
 .c2sc.smcp,
 .caps {
   text-transform: uppercase;
