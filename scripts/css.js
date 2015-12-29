@@ -9,6 +9,8 @@ var nested = require('postcss-nested')
 var filesize = require('filesize')
 var Cleancss = require('clean-css')
 var autoprefixer = require('autoprefixer')
+var packer = require('css-mqpacker')
+var mover = require('postcss-move-media')
 var pkg = require('../package.json')
 
 
@@ -43,6 +45,8 @@ compile = function() {
     .use(cssstats())
     .use(autoprefixer())
     .use(nested())
+    .use(packer())
+    .use(mover())
     .use(reporter())
     .process(src)
 
