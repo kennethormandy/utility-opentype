@@ -31,13 +31,13 @@ Then, include it within your source files:
 If you’re using Sass without [Eyeglass](https://github.com/sass-eyeglass/eyeglass) modules, you will need to include the actual path to the file in the `node_modules` directory, for example:
 
 ```scss
-@import "../node_modules/utility-opentype/index";
+@import "../node_modules/utility-opentype/css/utility-opentype";
 ```
 
 If you’d like to use the css directly, download the latest version of the compiled file, or reference the hosted CDN version in your HTML:
 
 ```html
-<link href="http://utility-opentype.kennethormandy.com/css/index.css" rel="stylesheet">
+<link href="https://cdn.rawgit.com/kennethormandy/utility-opentype/master/css/utility-opentype.min.css" rel="stylesheet">
 ```
 
 That’s it! You’re ready to use the classes within your markup.
