@@ -9,6 +9,16 @@ var css
 
 describe('sass', function () {
 
+  it('should compile source file', function (done) {
+    assert.doesNotThrow(function () {
+      sass.render(eyeglass({ file: 'index.css' }), function(err, result) {
+        if (err) throw err
+        result.css.toString()
+        done()
+      })
+    })
+  })
+
   it('should compile', function (done) {
     assert.doesNotThrow(function () {
       sass.render(eyeglass({ data: scss }), function(err, result) {
