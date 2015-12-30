@@ -36,6 +36,7 @@
 }
 
 .smcp {
+  text-transform: uppercase;
   -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
 }
 
@@ -43,8 +44,8 @@
 
   .smcp {
     text-transform: inherit;
-    -webkit-font-feature-settings: "lnum", "smcp", "c2sc" 0;
-    font-feature-settings: "lnum", "smcp", "c2sc" 0;
+    -webkit-font-feature-settings: "onum", "smcp", "c2sc" 0;
+    font-feature-settings: "onum", "smcp", "c2sc" 0;
   }
 }
 
@@ -74,18 +75,15 @@
 @supports not (font-variant-caps: all-small-caps) {
 
   .c2sc {
-    -webkit-font-feature-settings: "smcp" 0, "c2sc", "smcp", "c2sc";
-    font-feature-settings: "smcp" 0, "c2sc", "smcp", "c2sc";
+    -webkit-font-feature-settings: "onum", "smcp" 0, "c2sc", "smcp", "c2sc";
+    font-feature-settings: "onum", "smcp" 0, "c2sc", "smcp", "c2sc";
   }
-}
-
-.caps {
-  letter-spacing: 0;
 }
 
 .c2sc.smcp,
 .caps {
   text-transform: uppercase;
+  -ms-font-feature-settings: "smcp", "c2sc";
   font-variant-caps: all-small-caps;
 }
 
@@ -95,9 +93,33 @@
 
     .c2sc.smcp,
 .caps {
-      text-transform: lowercase;
+      text-transform: inherit;
       -webkit-font-feature-settings: "smcp", "c2sc", "smcp", "c2sc";
       font-feature-settings: "smcp", "c2sc", "smcp", "c2sc";
+    }
+  }
+}
+
+@supports not (font-variant-caps: small-caps) {
+
+  @supports not (font-variant-numeric: oldstyle-nums) {
+
+    .smcp.onum {
+      -webkit-font-feature-settings: "onum", "smcp" 1;
+      font-feature-settings: "onum", "smcp" 1;
+    }
+  }
+}
+
+@supports not (font-variant-caps: all-small-caps) {
+
+  @supports not (font-variant-numeric: oldstyle-nums) {
+
+    .c2sc.onum,
+.caps.onum {
+      text-transform: lowercase;
+      -webkit-font-feature-settings: "onum", "smcp" 1;
+      font-feature-settings: "onum", "smcp" 1;
     }
   }
 }
@@ -148,12 +170,12 @@
 }
 
 .swsh,
-.swsh-1 { -webkit-font-feature-settings: "swsh" 1; font-feature-settings: "swsh" 1 }
+.swsh-1 { -webkit-font-feature-settings: "swsh"; font-feature-settings: "swsh" }
 .swsh-2 { -webkit-font-feature-settings: "swsh" 2; font-feature-settings: "swsh" 2 }
 .swsh-3 { -webkit-font-feature-settings: "swsh" 3; font-feature-settings: "swsh" 3 }
 
 .salt,
-.salt-1 { -webkit-font-feature-settings: "salt" 1; font-feature-settings: "salt" 1 }
+.salt-1 { -webkit-font-feature-settings: "salt"; font-feature-settings: "salt" }
 .salt-2 { -webkit-font-feature-settings: "salt" 2; font-feature-settings: "salt" 2 }
 .salt-3 { -webkit-font-feature-settings: "salt" 3; font-feature-settings: "salt" 3 }
 
@@ -218,7 +240,6 @@
 }
 
 .sups {
-  text-transform: lowercase;
   font-variant-position: super;
 }
 
@@ -247,7 +268,6 @@
 
 .subs,
 .sinf {
-  text-transform: lowercase;
   font-size: inherit;
   font-variant-position: sub;
 }
@@ -349,7 +369,7 @@
   -ms-font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
 }
 
-@supports not ((-webkit-font-feature-settings: "lnum" inherit) or (font-feature-settings: "lnum" inherit)) {
+@supports not ((-webkit-font-feature-settings: "onum" inherit) or (font-feature-settings: "onum" inherit)) {
 
   .lnum.pnum {
     -webkit-font-feature-settings: "lnum", "onum" 0, "pnum", "tnum" 0;
@@ -361,7 +381,7 @@
   -ms-font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
 }
 
-@supports not ((-webkit-font-feature-settings: "lnum" inherit) or (font-feature-settings: "lnum" inherit)) {
+@supports not ((-webkit-font-feature-settings: "onum" inherit) or (font-feature-settings: "onum" inherit)) {
 
   .lnum.tnum {
     -webkit-font-feature-settings: "lnum", "onum" 0, "pnum" 0, "tnum";
@@ -474,5 +494,21 @@
   .zero {
     -webkit-font-feature-settings: "zero", "zero";
     font-feature-settings: "zero", "zero";
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+  .smcp {
+    text-transform: lowercase;
+  }
+
+  .c2sc {
+    text-transform: lowercase;
+  }
+
+  .c2sc.smcp,
+.caps {
+    text-transform: lowercase;
   }
 }
