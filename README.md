@@ -56,7 +56,7 @@ That’s it! You’re ready to use the classes within your markup.
 - [`.calt`](http://utility-opentype.kennethormandy.com/#calt) – Contextual alternates
 - [`.hist`](http://utility-opentype.kennethormandy.com/#hist) – Historical forms
 - [`.swsh`](http://utility-opentype.kennethormandy.com/#swsh) – Swashes, 1–3, still requires docs
-- [`.salt`](http://utility-opentype.kennethormandy.com/#salt) – Stylistic Alternates, 1–3, still requires docs
+- [`.salt`](http://utility-opentype.kennethormandy.com/#salt) – Stylistic Alternates, numbered 1–3 classes still require docs
 - [`.ss01`](http://utility-opentype.kennethormandy.com/#ss01) – Stylistic Sets, 1–20, still requires docs
 - [`.frac`](http://utility-opentype.kennethormandy.com/#frac) – Diagonal Fractions
 - [`.afrc`](http://utility-opentype.kennethormandy.com/#afrc) – Alternate Fractions, still requires docs
@@ -68,7 +68,7 @@ That’s it! You’re ready to use the classes within your markup.
 - [`.onum`](http://utility-opentype.kennethormandy.com/#onum) – Oldstyle numbers
 - [`.pnum`](http://utility-opentype.kennethormandy.com/#pnum) – Proportinal numbers
 - [`.tnum`](http://utility-opentype.kennethormandy.com/#tnum) – Tabular numbers
-- [`.zero`](http://utility-opentype.kennethormandy.com/#zero) – Slashes Zero, still requires docs
+- [`.zero`](http://utility-opentype.kennethormandy.com/#zero) – Slashes Zero
 
 ## Running locally
 
