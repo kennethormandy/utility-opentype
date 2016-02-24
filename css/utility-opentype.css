@@ -317,42 +317,6 @@
   }
 }
 
-@supports ((-webkit-font-feature-settings: "sinf") or (font-feature-settings: "sinf")) {
-
-  .sinf {
-    font-variant-position: normal;
-    -webkit-font-feature-settings: "sinf", "subs" off, "sups" off;
-    font-feature-settings: "sinf", "subs" off, "sups" off;
-    vertical-align: baseline;
-  }
-}
-
-@supports (overflow: -webkit-marquee) and (justify-content: inherit) {
-
-  .sinf {
-    vertical-align: sub;
-    font-size: smaller;
-  }
-}
-
-@supports ((-webkit-font-feature-settings: "sinf") or (font-feature-settings: "sinf")) {
-
-  .sinf {
-    font-variant-position: normal;
-    -webkit-font-feature-settings: "sinf", "subs" off, "sups" off;
-    font-feature-settings: "sinf", "subs" off, "sups" off;
-    vertical-align: baseline;
-  }
-}
-
-@supports (overflow: -webkit-marquee) and (justify-content: inherit) {
-
-  .sinf {
-    vertical-align: sub;
-    font-size: smaller;
-  }
-}
-
 @supports ((-webkit-font-feature-settings: "dnom") or (font-feature-settings: "dnom")) {
 
   .dnom {
@@ -365,8 +329,8 @@
 @supports (overflow: -webkit-marquee) and (justify-content: inherit) {
 
   .dnom {
-    vertical-align: bottom;
-    font-size: small;
+    vertical-align: baseline;
+    font-size: smaller;
   }
 }
 
@@ -383,7 +347,7 @@
 
   .numr {
     vertical-align: super;
-    font-size: small;
+    font-size: smaller;
   }
 }
 
