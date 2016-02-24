@@ -49,5 +49,8 @@
     "css": "node scripts/css",
     "start": "npm run css",
     "watch:css": "watch 'npm run css' index.css"
+  },
+  "dependencies": {
+    "filesize": "^3.2.1"
   }
 }

@@ -224,6 +224,30 @@
   }
 }
 
+.dnom {
+  @supports (font-feature-settings: "dnom") {
+    font-feature-settings: "dnom" 1;
+    vertical-align: baseline;
+  }
+  /* Since Safari lies and says it supports `font-feature-settings`, fix fallback subscript */
+  @supports (overflow: -webkit-marquee) and (justify-content: inherit) {
+    vertical-align: baseline;
+    font-size: smaller;
+  }
+}
+
+.numr {
+  @supports (font-feature-settings: "numr") {
+    font-feature-settings: "numr" 1;
+    vertical-align: baseline;
+  }
+  /* Since Safari lies and says it supports `font-feature-settings`, fix fallback subscript */
+  @supports (overflow: -webkit-marquee) and (justify-content: inherit) {
+    vertical-align: super;
+    font-size: smaller;
+  }
+}
+
 .lnum {
   @supports not (font-variant-numeric: lining-nums) {
     font-feature-settings: "lnum", "onum" 0;

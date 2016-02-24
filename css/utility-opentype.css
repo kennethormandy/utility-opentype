@@ -1,6 +1,6 @@
 /*
 
-    Utility OpenType v0.1.2
+    Utility OpenType v0.1.3
     Simple, CSS utility classes for advanced typographic features.
     http://utility-opentype.kennethormandy.com
 
@@ -313,6 +313,40 @@
 
   .sinf {
     vertical-align: sub;
+    font-size: smaller;
+  }
+}
+
+@supports ((-webkit-font-feature-settings: "dnom") or (font-feature-settings: "dnom")) {
+
+  .dnom {
+    -webkit-font-feature-settings: "dnom" 1;
+    font-feature-settings: "dnom" 1;
+    vertical-align: baseline;
+  }
+}
+
+@supports (overflow: -webkit-marquee) and (justify-content: inherit) {
+
+  .dnom {
+    vertical-align: baseline;
+    font-size: smaller;
+  }
+}
+
+@supports ((-webkit-font-feature-settings: "numr") or (font-feature-settings: "numr")) {
+
+  .numr {
+    -webkit-font-feature-settings: "numr" 1;
+    font-feature-settings: "numr" 1;
+    vertical-align: baseline;
+  }
+}
+
+@supports (overflow: -webkit-marquee) and (justify-content: inherit) {
+
+  .numr {
+    vertical-align: super;
     font-size: smaller;
   }
 }
