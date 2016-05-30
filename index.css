@@ -156,17 +156,17 @@
 
 .frac {
   @supports not (font-variant-numeric: diagonal-fractions) {
-    font-feature-settings: "frac", "afrc" 0;
+    font-feature-settings: "frac";
   }
-  -ms-font-feature-settings: "frac", "afrc" 0;
+  -ms-font-feature-settings: "frac";
   font-variant-numeric: diagonal-fractions;
 }
 
 .afrc {
   @supports not (font-variant-numeric: stacked-fractions) {
-    font-feature-settings: "frac", "afrc";
+    font-feature-settings: "afrc";
   }
-  -ms-font-feature-settings: "frac", "afrc";
+  -ms-font-feature-settings: "afrc";
   font-variant-numeric: stacked-fractions;
 }
 
