@@ -1,6 +1,6 @@
 /*
 
-    Utility OpenType v0.1.2
+    Utility OpenType v0.1.4
     Simple, CSS utility classes for advanced typographic features.
     http://utility-opentype.kennethormandy.com
 
@@ -201,28 +201,28 @@
 .ss20 { -webkit-font-feature-settings: "ss20"; font-feature-settings: "ss20" }
 
 .frac {
-  -ms-font-feature-settings: "frac", "afrc" 0;
+  -ms-font-feature-settings: "frac";
   font-variant-numeric: diagonal-fractions;
 }
 
 @supports not (font-variant-numeric: diagonal-fractions) {
 
   .frac {
-    -webkit-font-feature-settings: "frac", "afrc" 0, "frac";
-    font-feature-settings: "frac", "afrc" 0, "frac";
+    -webkit-font-feature-settings: "frac", "frac";
+    font-feature-settings: "frac", "frac";
   }
 }
 
 .afrc {
-  -ms-font-feature-settings: "frac", "afrc";
+  -ms-font-feature-settings: "afrc";
   font-variant-numeric: stacked-fractions;
 }
 
 @supports not (font-variant-numeric: stacked-fractions) {
 
   .afrc {
-    -webkit-font-feature-settings: "frac", "afrc", "afrc";
-    font-feature-settings: "frac", "afrc", "afrc";
+    -webkit-font-feature-settings: "afrc", "afrc";
+    font-feature-settings: "afrc", "afrc";
   }
 }
 
