@@ -36,25 +36,27 @@
 }
 
 .smcp {
-  text-transform: uppercase;
-  -ms-font-feature-settings: "lnum", "smcp", "c2sc" 0;
+  -ms-font-feature-settings: "lnum", "smcp" 0;
+  font-variant: small-caps;
 }
 
 @supports not (font-variant-caps: small-caps) {
 
   .smcp {
+    font-variant: normal;
     text-transform: inherit;
-    -webkit-font-feature-settings: "onum", "smcp", "c2sc" 0;
-    font-feature-settings: "onum", "smcp", "c2sc" 0;
+    -webkit-font-feature-settings: "onum", "smcp" 0;
+    font-feature-settings: "onum", "smcp" 0;
   }
 }
 
 @supports (font-variant-caps: small-caps) {
 
-  .smcp {
+  .smcp { 
+    font-variant: normal;
     text-transform: inherit;
-    -webkit-font-feature-settings: "c2sc";
-    font-feature-settings: "c2sc";
+    -webkit-font-feature-settings: "smcp";
+    font-feature-settings: "smcp";
     font-variant-caps: small-caps;
   }
 }
