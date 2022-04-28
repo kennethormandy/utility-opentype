@@ -1,4 +1,4 @@
-// Based on Basscss’ build script, MIT via http://git.io/vRpzw
+// Based on Basscss’ build script, MIT via https://github.com/basscss/basscss/blob/02a401370a2696907021a5367685cdaaaf42236d/scripts/css.js
 var fs = require('fs')
 var path = require('path')
 var postcss = require('postcss')
@@ -31,17 +31,6 @@ compile = function() {
 
   var result =
     postcss()
-    .use(cssnext({
-      features: {
-        customProperties: {
-          strict: false, // disable variable fallbacks from being redundantly added
-        },
-        rem: false,
-        pseudoElements: false,
-        colorRgba: false
-      }
-    }))
-    .use(removeComments())
     .use(cssstats())
     .use(autoprefixer())
     .use(nested())

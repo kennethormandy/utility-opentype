@@ -1,4 +1,4 @@
-// MIT via http://git.io/vR4SG
+// MIT via https://github.com/basscss/basscss/blob/master/test/test.js
 
 var fs = require('fs')
 var path = require('path')
